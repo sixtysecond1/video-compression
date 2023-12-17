@@ -40,7 +40,7 @@ def select_files():
 
 
 def process_files():
-    input_files = entry_file_path.get().split()
+    input_files = entry_file_path.get().strip('{}').split()
     crf_value = int(entry_crf.get()) if entry_crf.get() else 27
     output_prefix = entry_output_prefix.get()
     max_file_size = float(entry_max_file_size.get(
