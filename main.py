@@ -109,13 +109,12 @@ def process_files():
             else:
                 compress_video(input_file, curr_crf_value, output_prefix)
 
-            if shutdown_after_compress_var:
-                shutdown_after_compress()
-
         except Exception as e:
             result_label.config(text=f"處理 {input_file} 時發生錯誤: {str(e)}")
 
     result_label.config(text="壓縮完成！")
+    if shutdown_after_compress_var:
+        shutdown_after_compress()
 
 
 # 建立主視窗
